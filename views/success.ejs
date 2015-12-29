@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Success</title>
+</head>
+<body>
+<div class="navbar navbar-default navbar-static-top">
+    <div class="navbar-brand" style="height:75px;">
+        <img class="img-responsive"
+             src="./images/pp258.png" width="22%" style="width:75px;height:50px;"/>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="#"><i style="font-family:'Times New Roman';font-size:200%;color:darkblue;">Paypal... Payment Made
+                        Easy</i></a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="container" id="container" style="white-space:nowrap">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Success!!</h3>
+        </div>
+        <div class="panel-body">
+            <form id="form1" class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label for="to" class="col-sm-2 control-label"></label>
+                    <div class="col-sm-10">
+                        <div class="row" align="center">
+                            <div class="col-md-4" style="font-family:'Times New Roman';font-size:150%;color:darkblue;">
+                                You have sent
+                                <script>
+                                    document.write(localStorage.getItem("curr") + localStorage.getItem("amt"));
+                                </script>
+                                to
+                                <script>
+                                    document.write(localStorage.getItem("name"));
+                                </script>
+
+                            </div>
+                        </div>
+                        <div class="row" align="center">
+                            <div class="col-md-4" align="center">
+                                <img src="./images/green-tick.jpg" id="image"
+                                     style="width:40px;height:40px;display:inline;visibility:visible"/>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <a href="/sendMoney" class="btn btn-primary" role="button">Send Money</a>
+                                <a href="http://designshack.net/" class="btn btn-primary" role="button">View Transaction History</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <title>Send Money</title>
+    <meta charset="UTF-8"/>
+
+    <style>
+        .loader
+        {
+            position: fixed;
+            z-index: 999;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: Black;
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+            -moz-opacity: 0.8;
+        }
+        .center
+        {
+            z-index: 1000;
+            margin: 300px auto;
+            padding: 10px;
+            width: 130px;
+            background-color: White;
+            border-radius: 10px;
+            filter: alpha(opacity=100);
+            opacity: 1;
+            -moz-opacity: 1;
+        }
+        .center img
+        {
+            height: 128px;
+            width: 128px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="navbar navbar-default navbar-static-top">
+    <div class="navbar-brand" style="height:75px;">
+        <img class="img-responsive"
+             src="./images/pp258.png" width="22%" style="width:50px;height:50px;"/>
+    </div>
+    <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-left">
+            <li><a href="#"><i style="font-family:'Times New Roman';font-size:200%;color:darkblue;">Paypal... Payment Made
+                        Easy</i></a></li>
+
+        </ul>
+    </div>
+</div>
+<div class="container" id="container" style="white-space:nowrap">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3>Send Money - What are we doing?</h3>
+        </div>
+        <div class="panel-body">
+            <form id="form1" name = "form1"class="form-horizontal" role="form" action = "/success">
+                <div class="form-group">
+                    <label for="to" class="col-sm-2 control-label">Name:</label>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" id="name" Class="form-control"
+                                       style="display:inline; white-space:nowrap;border:1px solid gray"
+                                       onchange="checkName()">
+                                <div id="errors2" style="color: #ff0000;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="to" class="col-sm-2 control-label">To:</label>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" id="to" Class="form-control"
+                                       style="display:inline; white-space:nowrap;border:1px solid gray"
+                                        onchange="checkEmail()">
+                                <div id="errors" style="color: #ff0000;"></div>
+                            </div>
+                            <div class="col-md-5">
+                                <img src="./images/tick.png" id="image"
+                                     style="width:40px;height:40px;display:inline;visibility:hidden"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="amt" class="col-sm-2 control-label">Amount:</label>
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <input type="text" Class="form-control"
+                                       id="curr" style="border:1px solid gray" value="$" disabled>
+                            </div>
+                            <div class="col-md-4">
+                                <input type="text" Class="form-control"
+                                       id="amt" style="border:1px solid gray" onchange="checkAmount()"> &nbsp;
+                            </div>
+                            <div class="col-md-6">
+                                <select onchange="currency_change()"
+                                        id="currency" style="width:100px;"
+                                        Class="form-control">
+                                    <option id="usd">USD</option>
+                                    <option id="eur">EUR</option>
+                                    <option id="jpy">JPY</option>
+                                </select >
+                            </div>
+                        </div>
+                        <div id="errors1" style="color: #ff0000;"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="col-sm-2 control-label">Message(Optional):</label>
+                    <div class="col-sm-10">
+          <textarea id="message"
+                    rows="4" Class="form-control"
+                    cols="50" style="border:1px solid gray"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="col-sm-2 control-label">What's this Payment for?</label>
+                    <div class="col-sm-5">
+                        <input type="radio" name="paymentType" checked/>I'm sending money to family and friends<br>
+                        <input type="radio" name="paymentType" />I'm paying for goods and services<br>
+                    </div>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                       <input type="reset" value="Clear" class="btn btn-primary" >
+                        <input type="button" id="sendMoney" class="btn btn-primary" value="Next" onclick="check_field();" />
+                        <div class="loader" style="display: none">
+                            <div class="center">
+                                <img alt="" src="./images/pageloader.gif" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="/javascripts/sendmoneypage.js"></script>
+</body>
+</html>
